@@ -1,0 +1,29 @@
+#include<stdio.h>
+
+void Array_Stat (int *array, int *sump, int *avep);
+
+int main() {
+    
+    int array[] = {12, 15, 67, 45, 106};
+    int sum, ave;
+    
+    printf("\nThe values in the array are:\n\n");
+    
+    for (int i; i < 5; i++) {
+        printf("%d ", array[i]);
+    }
+    
+    Array_Stat (array, &sum, &ave);
+    printf("\n\n%d is the total sum of the array.\n\n%d is the average.", sum, ave);
+}
+
+void Array_Stat (int *array, int *sump, int *avep) {
+    
+    for (int i = 0; i < 5; i++) {
+        *sump = *sump + array[i];
+    }
+    
+    *avep = *sump / 5;
+
+    return ;
+}
